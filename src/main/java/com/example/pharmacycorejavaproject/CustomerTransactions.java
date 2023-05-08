@@ -21,15 +21,12 @@ public class CustomerTransactions extends DatabaseTransactions {
         try {
             transaction.begin();
 
-            Pharmacy pharmacy1 = entityManager.createQuery("SELECT p FROM Pharmacy p WHERE p.id = ?", Pharmacy.class)
+            Pharmacy pharmacy1 = entityManager.createQuery("SELECT p FROM Pharmacy p WHERE p.id = ?1", Pharmacy.class)
                     .setParameter(1, id)
                     .getSingleResult();
-            //System.out.println(pharmacy1.getPrice());
-            //System.out.println(pharmacy1.getStock());
 
             Companymoney companymoney1 = entityManager.createQuery("SELECT c FROM Companymoney c WHERE c.id = 1", Companymoney.class)
                     .getSingleResult();
-            //System.out.println(companymoney1.getCompanymoney());
 
             // Updating Pharmacy table
             entityManager.createNativeQuery("UPDATE Pharmacy p " +
@@ -39,8 +36,8 @@ public class CustomerTransactions extends DatabaseTransactions {
                     .executeUpdate();
 
             // Updating Companymoney table
-            entityManager.createNativeQuery("UPDATE Companymoney c" +
-                            "SET c.companymoney = ? WHERE id = 1")
+            entityManager.createNativeQuery("UPDATE Companymoney c " +
+                            "SET c.companymoney = ?1 WHERE id = 1")
                     .setParameter(1, (pharmacy1.getPrice() * count) + companymoney1.getCompanymoney())
                     .executeUpdate();
 
