@@ -12,52 +12,58 @@ public class PharmacyRequests extends DatabaseTransactions {
     }
     void requests () {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Add Drug : 1\nDelete Drug : 2\nEdit Drug : 3\nView Drug : 4\nChoose the transaction : ");
-        choice = scanner.nextInt();
-
+        boolean continueLoop = true;
         int id;
         int userId;
         String drugName;
         double price;
         int stock;
 
-        switch (choice) {
-            case 1:
-                System.out.println("Enter id : \nEnter user id : \nEnter drug name : \nEnter price : \nEnter stock : ");
-                id = scanner.nextInt();
-                userId = scanner.nextInt();
-                scanner.nextLine();
-                drugName = scanner.nextLine();
-                price = scanner.nextDouble();
-                stock = scanner.nextInt();
+        while (continueLoop) {
+            System.out.println("Add Drug : 1\nDelete Drug : 2\nEdit Drug : 3\nView Drug : 4\nTo Exit : 0\nChoose the transaction : ");
+            choice = scanner.nextInt();
 
-                addDrug(id, userId, drugName, price, stock);
-                return;
-            case 2:
-                System.out.println("Enter id : ");
-                id = scanner.nextInt();
-                deleteDrug(id);
-                return;
-            case 3:
-                System.out.println("Enter id : \nEnter user id : \nEnter drug name : \nEnter price : \nEnter stock : ");
-                id = scanner.nextInt();
-                userId = scanner.nextInt();
-                scanner.nextLine();
-                drugName = scanner.nextLine();
-                price = scanner.nextDouble();
-                stock = scanner.nextInt();
+            switch (choice) {
+                case 0:
+                    continueLoop = false;
+                    break;
+                case 1:
+                    System.out.println("Enter id : \nEnter user id : \nEnter drug name : \nEnter price : \nEnter stock : ");
+                    id = scanner.nextInt();
+                    userId = scanner.nextInt();
+                    scanner.nextLine();
+                    drugName = scanner.nextLine();
+                    price = scanner.nextDouble();
+                    stock = scanner.nextInt();
 
-                editDrug(id, userId, drugName, price, stock);
-                return;
-            case 4:
-                System.out.println("Enter id to view a record / Enter 0 to view all records : ");
-                id = scanner.nextInt();
-                if (id == 0) {
-                    viewDrug();
-                } else {
-                    viewDrug(id);
-                }
-                return;
+                    addDrug(id, userId, drugName, price, stock);
+                    break;
+                case 2:
+                    System.out.println("Enter id : ");
+                    id = scanner.nextInt();
+                    deleteDrug(id);
+                    break;
+                case 3:
+                    System.out.println("Enter id : \nEnter user id : \nEnter drug name : \nEnter price : \nEnter stock : ");
+                    id = scanner.nextInt();
+                    userId = scanner.nextInt();
+                    scanner.nextLine();
+                    drugName = scanner.nextLine();
+                    price = scanner.nextDouble();
+                    stock = scanner.nextInt();
+
+                    editDrug(id, userId, drugName, price, stock);
+                    break;
+                case 4:
+                    System.out.println("Enter id to view a record / Enter 0 to view all records : ");
+                    id = scanner.nextInt();
+                    if (id == 0) {
+                        viewDrug();
+                    } else {
+                        viewDrug(id);
+                    }
+                    break;
+            }
         }
     }
 
