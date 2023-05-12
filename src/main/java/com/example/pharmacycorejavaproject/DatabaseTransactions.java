@@ -1,5 +1,6 @@
 package com.example.pharmacycorejavaproject;
 
+import com.example.pharmacycorejavaproject.interfaces.DatabaseTransactionInterface;
 import entity.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -7,7 +8,7 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import java.util.Scanner;
 
-public class DatabaseTransactions {
+public class DatabaseTransactions implements DatabaseTransactionInterface {
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
     EntityManager entityManager = entityManagerFactory.createEntityManager();
     EntityTransaction transaction = entityManager.getTransaction();
@@ -17,7 +18,7 @@ public class DatabaseTransactions {
         //
     }
 
-    boolean loginRequest() {
+    public boolean loginRequest() {
         System.out.println("Enter your username : ");
         String username = scanner.nextLine();
         System.out.println("Enter your password : ");

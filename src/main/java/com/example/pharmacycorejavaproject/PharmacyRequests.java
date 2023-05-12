@@ -1,16 +1,17 @@
 package com.example.pharmacycorejavaproject;
 
+import com.example.pharmacycorejavaproject.interfaces.PharmacyRequestInterface;
 import entity.Pharmacy;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class PharmacyRequests extends DatabaseTransactions {
+public class PharmacyRequests extends DatabaseTransactions implements PharmacyRequestInterface {
     int choice;
     PharmacyRequests() {
         //
     }
-    void requests () {
+    public void requests() {
         Scanner scanner = new Scanner(System.in);
         boolean continueLoop = true;
         int id;
@@ -67,7 +68,7 @@ public class PharmacyRequests extends DatabaseTransactions {
         }
     }
 
-    void addDrug(int id, int userId, String drugName, double price, int stock) {
+    public void addDrug(int id, int userId, String drugName, double price, int stock) {
         try {
             transaction.begin();
 
@@ -89,7 +90,7 @@ public class PharmacyRequests extends DatabaseTransactions {
         }
     }
 
-    void deleteDrug(int id) {
+    public void deleteDrug(int id) {
         try {
             transaction.begin();
 
@@ -107,7 +108,7 @@ public class PharmacyRequests extends DatabaseTransactions {
         }
     }
 
-    void editDrug(int id, int userId, String drugName, double price, int stock) {
+    public void editDrug(int id, int userId, String drugName, double price, int stock) {
         try {
             transaction.begin();
 
@@ -130,7 +131,7 @@ public class PharmacyRequests extends DatabaseTransactions {
         }
     }
 
-    void viewDrug() {
+    public void viewDrug() {
         try {
             transaction.begin();
 
@@ -152,7 +153,7 @@ public class PharmacyRequests extends DatabaseTransactions {
         }
     }
 
-    void viewDrug(int intId) {
+    public void viewDrug(int intId) {
         try {
             transaction.begin();
 

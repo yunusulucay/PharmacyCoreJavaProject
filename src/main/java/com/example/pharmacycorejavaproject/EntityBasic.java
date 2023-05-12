@@ -1,11 +1,12 @@
 package com.example.pharmacycorejavaproject;
 
+import com.example.pharmacycorejavaproject.interfaces.EntityBasicInterface;
 import jakarta.persistence.EntityManager;
 
 import java.util.Scanner;
 
-public class EntityBasic extends PharmacyRequests {
-    void mainRequest() {
+public class EntityBasic extends PharmacyRequests implements EntityBasicInterface {
+    public void mainRequest() {
         DatabaseTransactions databaseTransactions = new DatabaseTransactions();
         CustomerTransactions customerTransactions = new CustomerTransactions();
         boolean continueLoop = true;

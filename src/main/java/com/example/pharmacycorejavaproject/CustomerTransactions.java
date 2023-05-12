@@ -1,5 +1,6 @@
 package com.example.pharmacycorejavaproject;
 
+import com.example.pharmacycorejavaproject.interfaces.CustomerTransactionsInterface;
 import entity.Companymoney;
 import entity.Pharmacy;
 import entity.User;
@@ -10,12 +11,19 @@ import jakarta.persistence.Persistence;
 
 import java.util.Scanner;
 
-public class CustomerTransactions extends DatabaseTransactions {
+public class CustomerTransactions extends DatabaseTransactions implements CustomerTransactionsInterface {
     CustomerTransactions() {
         //
     }
 
-    void buyDrug() {
+    /**
+     * Maybe add ??
+     * Which day the drug bought ? (date field)
+     * inheritance
+     * interface (is a group of related methods with empty bodies). we can specify an object's behaviour using interface.
+     * dictionary usage Map HashMap, LinkedHashMap, Hashtable
+     */
+    public void buyDrug() {
         //while (scanner.nextInt() != 0)
         Scanner scanner = new Scanner(System.in);
         while (true) {
