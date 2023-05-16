@@ -1,6 +1,6 @@
 # Pharmacy Core Java Project
 
-![image](https://github.com/yunusulucay/PharmacyProjectCore/assets/42489236/bc9ef332-c8eb-419a-9a18-a7cec2faf333)
+![image](https://github.com/yunusulucay/PharmacyCoreJavaProject/assets/42489236/02f6f732-d3ee-40cf-884d-1aea882f523c)
 
 For this application following dependencies used :
 - Java 17
@@ -15,6 +15,4 @@ General overview :
 - Hibernate/JPA, OOP principles and Core Java were implemented. 
 - There are 3 tables : Companymoney, Pharmacy and User.
 
-![image](https://github.com/yunusulucay/PharmacyProjectCore/assets/42489236/ff13d91c-44d7-4d47-ab5f-dfe42a33d784)
-
-![image](https://github.com/yunusulucay/PharmacyProjectCore/assets/42489236/264887eb-0782-4cc4-9580-deac3e9b84d7)
+![image](https://github.com/yunusulucay/PharmacyCoreJavaProject/assets/42489236/092835d1-f2c6-4b22-a63f-942815f7a6ad)
