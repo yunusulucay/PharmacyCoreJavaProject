@@ -1,8 +1,5 @@
 package com.example.pharmacycorejavaproject;
-
 import com.example.pharmacycorejavaproject.interfaces.EntityBasicInterface;
-import jakarta.persistence.EntityManager;
-
 import java.util.Scanner;
 
 public class EntityBasic extends PharmacyRequests implements EntityBasicInterface {
@@ -39,8 +36,4 @@ public class EntityBasic extends PharmacyRequests implements EntityBasicInterfac
             }
         }
     }
-
-
-
-
 }
